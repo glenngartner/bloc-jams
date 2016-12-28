@@ -2,33 +2,19 @@
  * Created by glenn on 12/28/2016.
  */
 
-var animatePoints = function() {
+var point = document.getElementsByClassName('point');
 
-    var points = document.getElementsByClassName('point');
+var revealPoint = function (points) {
 
-    var revealFirstPoint = function() {
-        points[0].style.opacity = 1;
-        points[0].style.transform = "scaleX(1) translateY(0)";
-        points[0].style.msTransform = "scaleX(1) translateY(0)";
-        points[0].style.WebkitTransform = "scaleX(1) translateY(0)";
-    };
+    var transform = "scaleX(1) translate(0)";
 
-    var revealSecondPoint = function() {
-        points[1].style.opacity = 1;
-        points[1].style.transform = "scaleX(1) translateY(0)";
-        points[1].style.msTransform = "scaleX(1) translateY(0)";
-        points[1].style.WebkitTransform = "scaleX(1) translateY(0)";
-    };
-
-    var revealThirdPoint = function() {
-        points[2].style.opacity = 1;
-        points[2].style.transform = "scaleX(1) translateY(0)";
-        points[2].style.msTransform = "scaleX(1) translateY(0)";
-        points[2].style.WebkitTransform = "scaleX(1) translateY(0)";
-    };
-
-    revealFirstPoint();
-    revealSecondPoint();
-    revealThirdPoint();
+    for (var i = 0; i < points.length; i++) {
+        points[i].style.opacity = 1;
+        points[i].style.transform = transform;
+        points[i].style.msTransform = transform;
+        points[i].style.WebkitTransform = transform;
+    }
 
 };
+
+revealPoint(point);
