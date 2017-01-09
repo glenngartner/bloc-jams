@@ -4,7 +4,9 @@
 var collectionItemTemplate =
 
         '<div class="collection-album-container column fourth">'
+        + '<a href="album.html">'
         + '  <img src="assets/images/album_covers/01.png"/>'
+        + '</a>'
         + '  <div class="collection-album-info caption">'
         + '    <p>'
         + '      <a class="album-name" href="album.html"> The Colors </a>'
@@ -25,4 +27,5 @@ window.onload = function () {
     for (var i = 0; i < 12; i++) {
         collectionContainer.innerHTML += collectionItemTemplate;
     }
+    ;
 }
