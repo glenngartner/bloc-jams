@@ -63,7 +63,7 @@ var setCurrentAlbum = function (album) {
     }
 };
 
-var getSongItem = function(element) {
+var getSongItem = function (element) {
     switch (element.className) {
         case 'album-song-button':
         case 'ion-play':
@@ -81,12 +81,23 @@ var getSongItem = function(element) {
     }
 };
 
-var findParentByClassName = function(element, targetClass) {
+var findParentByClassName = function (element, targetClass) {
     if (element) {
         var currentParent = element.parentElement;
+        // if current parent is undefined or null
+        if (!currentParent) {
+            alert("No parent found");
+        }
+
         while (currentParent.className != targetClass && currentParent.className !== null) {
             currentParent = currentParent.parentElement;
+            return;
         }
+        if (currentParent.className != targetClass) {
+            // alert when fail to find a parent with the tergetClass name
+            alert("No parent found with that class name");
+        }
+        ;
         return currentParent;
     }
 };
