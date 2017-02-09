@@ -3,8 +3,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px;
-    background-color: rgba(255, 255, 255, 0.3);
+    height: 150px;
+    background: rgba(255, 255, 255, 0.3);
     z-index: 100;
 }
 
@@ -32,12 +32,13 @@
     vertical-align: middle;
 }
 
+/* === MAIN CONTROLS === */
+
 .player-bar .main-controls {
     width: 25%;
     text-align: left;
     padding-right: 1rem;
 }
-
 
 .player-bar .main-controls .previous {
     margin-right: 16.5%;
@@ -47,6 +48,8 @@
     margin-right: 15%;
     font-size: 1.6rem;
 }
+
+/* === CURRENTLY PLAYING === */
 
 .player-bar .currently-playing {
     width: 50%;
@@ -78,6 +81,7 @@
     display: none;
 }
 
+/* === SEEK BAR === */
 
 .seek-control {
     position: relative;
@@ -97,14 +101,14 @@
 
 .seek-bar {
     height: 0.25rem;
-    background-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 2px;
     position: relative;
     cursor: pointer;
 }
 
 .seek-bar .fill {
-    background-color: white;
+    background: white;
     width: 36%;
     height: 0.25rem;
     border-radius: 2px;
@@ -114,17 +118,17 @@
     position: absolute;
     height: 0.5rem;
     width: 0.5rem;
-    background-color: white;
+    background: white;
     left: 36%;
-    top: 50%;
-    /* #1 */
     margin-left: -0.25rem;
+    top: 50%;
     margin-top: -0.25rem;
     border-radius: 50%;
     cursor: pointer;
-    -webkit-transition: all 100ms ease-in-out;
-    -moz-transition: all 100ms ease-in-out;
-    transition: all 100ms ease-in-out;
+    transition: width 100ms ease-in-out,
+    height 100ms ease-in-out,
+    margin-top 100ms ease-in-out,
+    margin-left 100ms ease-in-out;
 }
 
 .seek-bar:hover .thumb {
@@ -134,11 +138,12 @@
     margin-left: -0.5rem;
 }
 
+/* === VOLUME === */
+
 .player-bar .volume {
     width: 25%;
     text-align: right;
 }
-
 
 .player-bar .volume .icon {
     font-size: 1.1rem;
@@ -152,10 +157,12 @@
     vertical-align: middle;
 }
 
-@media (max-width: 640px) {
+/* === MOBILE === */
+
+@media (max-width: 40rem) {
     .player-bar {
         padding: 1rem;
-        background-color: rgba(0,0,0,0.6);
+        background: rgba(0,0,0,0.6);
     }
 
     .player-bar .main-controls,
@@ -168,8 +175,7 @@
         text-align: center;
     }
 
-    .player-bar .main-controls,
-    .player-bar .volume {
+    .player-bar .main-controls {
         min-height: 3.5rem;
     }
 
@@ -177,12 +183,16 @@
         min-height: 2.5rem;
     }
 
-    .player-bar .artist-name,
-    .player-bar .song-name {
+    .player-bar .volume {
+        min-height: 3.5rem;
+    }
+
+    .artist-name,
+    .song-name {
         display: none;
     }
 
-    .player-bar .currently-playing .artist-song-mobile {
+    .artist-song-mobile {
         display: block;
     }
 }
